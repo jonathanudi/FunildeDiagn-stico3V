@@ -36,23 +36,23 @@
   #deck{position:relative; width:100vw; height:100vh;}
   .slide{
     position:absolute; inset:0; display:flex; flex-direction:column;
-    background:var(--white); padding:4.4vh 5.5vw 9vh;
+    background:var(--white); padding:3vh 5.5vw 7.5vh;
     opacity:0; visibility:hidden; transform:translateY(18px) scale(.99);
     transition:opacity .5s ease, transform .5s ease, visibility 0s linear .5s;
-    overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--teal-light) transparent;
+    overflow-y:scroll; scrollbar-width:thin; scrollbar-color:var(--teal-primary) var(--paper);
   }
-  .slide::-webkit-scrollbar{width:8px;}
-  .slide::-webkit-scrollbar-track{background:transparent;}
-  .slide::-webkit-scrollbar-thumb{background:var(--teal-light); border-radius:8px;}
+  .slide::-webkit-scrollbar{width:10px;}
+  .slide::-webkit-scrollbar-track{background:var(--paper);}
+  .slide::-webkit-scrollbar-thumb{background:var(--teal-primary); border-radius:8px; border:2px solid var(--paper);}
   .slide.active{
     opacity:1; visibility:visible; transform:translateY(0) scale(1);
     transition:opacity .5s ease, transform .5s ease, visibility 0s; z-index:2;
   }
 
-  .eyebrow{font-size:1.15rem; letter-spacing:.04em; color:var(--teal-primary); font-weight:700; margin-bottom:.8rem;}
+  .eyebrow{font-size:1.1rem; letter-spacing:.04em; color:var(--teal-primary); font-weight:700; margin-bottom:.6rem;}
   .slide h1{font-size:clamp(2.6rem,5.2vw,4.4rem); font-weight:600; color:var(--teal-dark); line-height:1.06; margin:0 0 .7rem;}
-  .slide h2{font-size:clamp(2.2rem,4vw,3.3rem); font-weight:600; color:var(--teal-dark); margin:0 0 .8rem; line-height:1.1;}
-  .lede{font-size:clamp(1.2rem,1.8vw,1.55rem); line-height:1.5; color:var(--gray-mid); max-width:70ch;}
+  .slide h2{font-size:clamp(1.9rem,3.4vw,2.9rem); font-weight:600; color:var(--teal-dark); margin:0 0 .6rem; line-height:1.12;}
+  .lede{font-size:clamp(1.1rem,1.6vw,1.4rem); line-height:1.45; color:var(--gray-mid); max-width:70ch;}
 
   #logo{position:fixed; top:3.2vh; right:5.5vw; height:5.6vh; z-index:20; transition:opacity .3s ease;}
 
@@ -76,7 +76,7 @@
   .title-slide .date-badge::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--white);}
 
   /* ---- funil macro (6 etapas) ---- */
-  .funnel-mega{display:flex; align-items:stretch; gap:.6rem; margin-top:2.4rem; margin-bottom:1rem; flex-wrap:wrap;}
+  .funnel-mega{display:flex; align-items:stretch; gap:.6rem; margin-top:1.7rem; margin-bottom:1rem; flex-wrap:wrap;}
   .fm-step{
     flex:1; min-width:140px; background:var(--paper); border:1px solid var(--line); border-radius:14px;
     padding:1.6rem 1.2rem; text-align:center; display:flex; flex-direction:column; gap:.6rem; align-items:center; justify-content:center;
@@ -93,12 +93,12 @@
 
   /* ---- anúncio (mock) ---- */
   .ad-mock{
-    margin-top:2rem; max-width:640px; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    margin-top:1.5rem; max-width:640px; border:1px solid var(--line); border-radius:16px; overflow:hidden;
     box-shadow:0 20px 40px rgba(20,88,88,.12);
   }
   .ad-mock .ad-canvas{
     background:linear-gradient(150deg,var(--teal-dark),var(--teal-primary));
-    color:var(--white); padding:2.4rem 2rem; text-align:center;
+    color:var(--white); padding:1.7rem 2rem; text-align:center;
   }
   .ad-mock .ad-headline{font-family:'Fraunces',serif; font-size:clamp(1.5rem,2.4vw,2rem); font-weight:600; line-height:1.3;}
   .ad-mock .ad-foot{background:var(--white); padding:1.2rem 1.6rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;}
@@ -107,97 +107,97 @@
     background:var(--teal-primary); color:var(--white); font-weight:700; font-size:1.02rem;
     padding:.65rem 1.3rem; border-radius:100px; white-space:nowrap;
   }
-  .ad-channel{margin-top:1.2rem; font-size:1.1rem; color:var(--gray-mid);}
+  .ad-channel{margin-top:1rem; font-size:1.1rem; color:var(--gray-mid);}
 
   /* ---- landing page hero ---- */
-  .quote-box{margin-top:1.6rem; border-left:4px solid var(--teal-light); padding-left:1.4rem; font-family:'Fraunces',serif; font-style:italic; color:var(--teal-dark); font-size:clamp(1.25rem,2vw,1.6rem); line-height:1.4; max-width:70ch;}
-  .check-list{margin-top:1.8rem; display:flex; flex-direction:column; gap:.9rem; max-width:56ch;}
+  .quote-box{margin-top:1rem; border-left:4px solid var(--teal-light); padding-left:1.4rem; font-family:'Fraunces',serif; font-style:italic; color:var(--teal-dark); font-size:clamp(1.25rem,2vw,1.6rem); line-height:1.4; max-width:70ch;}
+  .check-list{margin-top:1.3rem; display:flex; flex-direction:column; gap:.9rem; max-width:56ch;}
   .check-item{display:flex; gap:.8rem; align-items:flex-start; font-size:1.2rem; color:var(--gray-dark); line-height:1.4;}
   .check-item .ck{flex:none; width:1.6rem; height:1.6rem; border-radius:50%; background:var(--teal-primary); color:var(--white); display:flex; align-items:center; justify-content:center; font-size:.95rem; margin-top:.1rem;}
 
   /* ---- formulário mock ---- */
-  .form-mock{margin-top:1.8rem; display:flex; gap:1.6rem; align-items:flex-start; flex-wrap:wrap;}
-  .fm-card{flex:1; min-width:260px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:1.6rem 1.8rem;}
+  .form-mock{margin-top:1.3rem; display:flex; gap:1.6rem; align-items:flex-start; flex-wrap:wrap;}
+  .fm-card{flex:1; min-width:260px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:1.2rem 1.5rem;}
   .fm-card .fm-step-label{font-size:1rem; color:var(--teal-primary); font-weight:700; letter-spacing:.03em; text-transform:uppercase; margin-bottom:.9rem;}
   .fm-field{background:var(--white); border:1px solid var(--line); border-radius:8px; padding:.7rem 1rem; font-size:1.05rem; color:var(--gray-mid); margin-bottom:.6rem;}
   .fm-opt{display:flex; align-items:center; gap:.6rem; font-size:1.05rem; color:var(--gray-dark); margin-bottom:.55rem;}
   .fm-opt .radio{width:1.05rem; height:1.05rem; border-radius:50%; border:2px solid var(--teal-primary); flex:none;}
-  .form-note{margin-top:1.4rem; font-size:1.1rem; color:var(--gray-mid);}
+  .form-note{margin-top:1.1rem; font-size:1.1rem; color:var(--gray-mid);}
 
   /* ---- segmentação PF x PJ ---- */
-  .branch-cols{display:flex; gap:2.2rem; margin-top:1.8rem; align-items:stretch; flex-wrap:wrap;}
-  .branch-col{flex:1; border:1px solid var(--line); border-radius:14px; padding:1.8rem 1.9rem; background:var(--paper);}
+  .branch-cols{display:flex; gap:2.2rem; margin-top:1.3rem; align-items:stretch; flex-wrap:wrap;}
+  .branch-col{flex:1; border:1px solid var(--line); border-radius:14px; padding:1.3rem 1.5rem; background:var(--paper);}
   .branch-col .bc-tag{display:inline-block; font-size:1rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--white); background:var(--teal-primary); padding:.4rem 1rem; border-radius:100px; margin-bottom:1.1rem;}
   .branch-col ul{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem;}
   .branch-col li{font-size:1.12rem; color:var(--gray-dark); line-height:1.4;}
   .branch-col.pj .bc-tag{background:var(--teal-dark);}
 
   /* ---- preço (cards) ---- */
-  .price-cards{display:flex; gap:1.4rem; margin-top:2rem; flex-wrap:wrap;}
-  .price-card{flex:1; min-width:150px; border:2px solid var(--line); border-radius:14px; padding:1.8rem 1.4rem; text-align:center;}
+  .price-cards{display:flex; gap:1.4rem; margin-top:1.5rem; flex-wrap:wrap;}
+  .price-card{flex:1; min-width:150px; border:2px solid var(--line); border-radius:14px; padding:1.2rem 1.2rem; text-align:center;}
   .price-card .pv{font-family:'Fraunces',serif; font-size:2.2rem; font-weight:600; color:var(--teal-dark);}
   .price-card .pl{font-size:1rem; color:var(--gray-mid); margin-top:.3rem;}
   .price-card.reco{border-color:var(--teal-primary); background:var(--row-alt);}
-  .price-desc{margin-top:1.6rem; font-size:1.2rem; color:var(--gray-dark); max-width:60ch;}
+  .price-desc{margin-top:1rem; font-size:1.2rem; color:var(--gray-dark); max-width:60ch;}
   .price-methods{margin-top:1rem; display:flex; gap:.7rem;}
   .pill-tag{border:1px solid var(--line); border-radius:100px; padding:.4rem 1rem; font-size:.98rem; color:var(--gray-mid);}
 
   /* ---- lista de gatilhos ---- */
-  .trigger-list{margin-top:1.8rem; display:flex; flex-direction:column; gap:0; max-width:70ch;}
-  .trigger-row{display:flex; gap:1.2rem; align-items:center; padding:1rem 1.1rem; border-radius:8px;}
-  .trigger-row:nth-child(odd){background:var(--row-alt);}
+  .trigger-list{margin-top:1rem; display:flex; flex-wrap:wrap; gap:.5rem .8rem; max-width:none;}
+  .trigger-row{flex:0 1 calc(50% - .4rem); min-width:260px; display:flex; gap:.7rem; align-items:center; padding:.6rem .9rem; border-radius:8px; background:var(--row-alt);}
   .trigger-row .tarrow{flex:none; color:var(--teal-primary); font-size:1.3rem;}
-  .trigger-row .ttxt{font-size:1.25rem; color:var(--gray-dark);}
+  .trigger-row .ttxt{font-size:1.05rem; color:var(--gray-dark); line-height:1.3;}
 
   /* ---- arquitetura (pipeline vertical/horizontal) ---- */
-  .arch-flow{margin-top:1.8rem; margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;}
+  .arch-flow{margin-top:1.3rem; margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;}
   .arch-node{background:var(--teal-dark); color:var(--white); border-radius:9px; padding:.75rem 1.1rem; font-size:1.05rem; font-weight:600;}
   .arch-node.alt{background:var(--white); color:var(--teal-dark); border:2px solid var(--teal-primary);}
   .arch-sep{color:var(--teal-light); font-size:1.3rem; flex:none;}
 
   /* ---- whatsapp bubble ---- */
-  .wa-wrap{margin-top:2rem; max-width:520px; background:#E9EDEB; border-radius:16px; padding:2rem 1.6rem; box-shadow:0 20px 40px rgba(20,88,88,.1);}
-  .wa-bubble{background:var(--wa-bubble); border-radius:12px 12px 12px 2px; padding:1.1rem 1.3rem; font-size:1.1rem; line-height:1.5; color:#233; max-width:100%;}
+  .wa-wrap{margin-top:1.5rem; max-width:520px; background:#E9EDEB; border-radius:16px; padding:2rem 1.6rem; box-shadow:0 20px 40px rgba(20,88,88,.1);}
+  .wa-bubble{background:var(--wa-bubble); border-radius:12px 12px 12px 2px; padding:.9rem 1.2rem; font-size:1.05rem; line-height:1.4; color:#233; max-width:100%;}
   .wa-bubble .wa-sign{display:block; margin-top:.7rem; font-size:.9rem; color:#5c6664; font-weight:600;}
 
   /* ---- crm card ---- */
-  .crm-card{margin-top:2rem; max-width:520px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 20px 40px rgba(20,88,88,.1);}
+  .crm-card{margin-top:1.5rem; max-width:520px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 20px 40px rgba(20,88,88,.1);}
   .crm-tag{background:var(--teal-primary); color:var(--white); font-size:1rem; font-weight:700; padding:.7rem 1.4rem; letter-spacing:.02em;}
-  .crm-body{padding:1.5rem 1.6rem; display:flex; flex-direction:column; gap:.55rem;}
+  .crm-body{padding:1.1rem 1.4rem; display:flex; flex-direction:column; gap:.45rem;}
   .crm-name{font-family:'Fraunces',serif; font-size:1.6rem; font-weight:600; color:var(--teal-dark);}
   .crm-row{display:flex; justify-content:space-between; font-size:1.08rem; color:var(--gray-dark); border-bottom:1px solid var(--line); padding:.4rem 0;}
   .crm-row span:first-child{color:var(--gray-mid);}
   .crm-action{margin-top:.6rem; background:var(--amber-bg); border:1px solid var(--amber-line); border-radius:8px; padding:.8rem 1rem; font-size:1.02rem; color:#7A5B14; font-weight:600;}
 
   /* ---- script (dialogo) ---- */
-  .script-wrap{margin-top:1.8rem; display:flex; flex-direction:column; gap:.9rem; max-width:66ch;}
+  .script-wrap{margin-top:1.3rem; display:flex; flex-direction:column; gap:.9rem; max-width:66ch;}
   .script-line{display:flex; gap:1rem; align-items:flex-start;}
   .script-line .who{flex:none; width:6.4rem; font-size:.95rem; font-weight:700; color:var(--teal-primary); text-transform:uppercase; letter-spacing:.03em; padding-top:.5rem;}
   .script-line .bubble{flex:1; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:.9rem 1.2rem; font-size:1.15rem; color:var(--gray-dark); line-height:1.5;}
   .script-line.cliente .bubble{background:var(--row-alt);}
 
   /* ---- diagnóstico (grid perguntas) ---- */
-  .diag-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:1.8rem;}
+  .diag-grid{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1rem;}
+  .diag-chip{flex:0 1 calc(33.333% - .5rem); min-width:150px;}
   .diag-chip{background:var(--paper); border:1px solid var(--line); border-radius:9px; padding:.9rem 1.1rem; font-size:1.15rem; color:var(--teal-dark); font-weight:600; text-align:center;}
-  .diag-foot{margin-top:1.6rem; font-size:1.2rem; color:var(--gray-dark); max-width:64ch;}
+  .diag-foot{margin-top:1rem; font-size:1.2rem; color:var(--gray-dark); max-width:64ch;}
 
   /* ---- exemplos de encaminhamento ---- */
-  .example-cards{display:flex; gap:1.4rem; margin-top:1.6rem;}
+  .example-cards{display:flex; gap:1.4rem; margin-top:1rem;}
   .example-card{flex:1; border:1px solid var(--line); border-radius:12px; padding:1.3rem 1.4rem; background:var(--paper);}
   .example-card .ec-in{font-size:1.05rem; color:var(--gray-mid); margin-bottom:.6rem;}
   .example-card .ec-out{font-family:'Fraunces',serif; font-size:1.25rem; color:var(--teal-dark); font-weight:600;}
-  .path-flow{margin-top:1.8rem; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;}
+  .path-flow{margin-top:1.3rem; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;}
   .path-node{background:var(--teal-dark); color:var(--white); border-radius:100px; padding:.7rem 1.4rem; font-size:1.1rem; font-weight:600;}
   .path-node.dest{background:var(--teal-primary);}
   .path-sep{color:var(--teal-light); font-size:1.3rem;}
 
   /* ---- pipeline CRM (chips) ---- */
-  .pipeline-list{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem;}
+  .pipeline-list{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.3rem;}
   .pipe-chip{border:1px solid var(--line); border-radius:100px; padding:.6rem 1.2rem; font-size:1.05rem; color:var(--gray-dark);}
   .pipe-chip.warn{border-color:var(--amber-line); background:var(--amber-bg); color:#7A5B14;}
 
   /* ---- sacada do desconto ---- */
-  .discount-wrap{display:flex; gap:2rem; margin-top:1.8rem; align-items:flex-start; flex-wrap:wrap;}
+  .discount-wrap{display:flex; gap:2rem; margin-top:1.3rem; align-items:flex-start; flex-wrap:wrap;}
   .discount-card{flex:1; background:var(--teal-dark); color:var(--white); border-radius:14px; padding:2rem 2rem;}
   .discount-card .dc-price{font-family:'Fraunces',serif; font-size:2rem; font-weight:600;}
   .discount-card p{font-size:1.1rem; line-height:1.5; color:rgba(255,255,255,.9);}
@@ -208,8 +208,8 @@
   .perception-item b{display:block; margin-bottom:.3rem; font-family:'Fraunces',serif; font-size:1.05rem;}
 
   /* ---- experiência contínua ---- */
-  .flow{display:flex; flex-direction:column; gap:0; margin-top:1.6rem;}
-  .flow-step{display:flex; gap:1.4rem; align-items:center; padding:1rem 1.2rem; border-radius:8px;}
+  .flow{display:flex; flex-direction:column; gap:0; margin-top:1rem;}
+  .flow-step{display:flex; gap:1.2rem; align-items:center; padding:.65rem 1.1rem; border-radius:8px;}
   .flow-step:nth-child(odd){background:var(--row-alt);}
   .flow-step .fn{flex:none; width:2.3rem; height:2.3rem; border-radius:50%; background:var(--teal-primary); color:var(--white); display:flex; align-items:center; justify-content:center; font-size:1.05rem; font-weight:700;}
   .flow-step .fx{font-size:1.2rem; color:var(--gray-dark); line-height:1.4;}
@@ -239,7 +239,7 @@
 
   @media (max-width:900px){
     .branch-cols,.form-mock,.discount-wrap,.example-cards{flex-direction:column;}
-    .diag-grid{grid-template-columns:1fr 1fr;}
+    .diag-chip,.trigger-row{flex:1 1 100%;}
     .price-cards{flex-direction:column;}
     .funnel-mega{flex-direction:column;}
     .fm-arrow{transform:rotate(90deg); align-self:center;}
@@ -409,11 +409,11 @@
       <span class="pill-tag">Atendimento personalizado incluso</span>
     </div>
     <div class="quote-box">Não é apenas um PDF automático. O cliente contrata uma pesquisa e recebe, junto, uma análise conduzida por gente de verdade.</div>
-    <div style="display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1.4rem;">
-      <div style="flex:1; min-width:260px; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.3rem; font-size:1.08rem; line-height:1.4; color:var(--gray-dark);"><b style="display:block; margin-bottom:.3rem; font-family:'Fraunces',serif; color:var(--teal-dark);">O que o cliente pensa</b>"Vou pagar pouco para descobrir como está minha situação."</div>
-      <div style="flex:1; min-width:260px; background:var(--row-alt); border:1px solid var(--teal-light); border-radius:10px; padding:1.1rem 1.3rem; font-size:1.08rem; line-height:1.4; color:var(--teal-dark);"><b style="display:block; margin-bottom:.3rem; font-family:'Fraunces',serif;">O que a 3V sabe</b>Internamente, a empresa está adquirindo um lead altamente qualificado.</div>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:.9rem;">
+      <div style="flex:1; min-width:260px; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:.8rem 1.1rem; font-size:1.02rem; line-height:1.35; color:var(--gray-dark);"><b style="display:block; margin-bottom:.2rem; font-family:'Fraunces',serif; color:var(--teal-dark);">O que o cliente pensa</b>"Vou pagar pouco para descobrir como está minha situação."</div>
+      <div style="flex:1; min-width:260px; background:var(--row-alt); border:1px solid var(--teal-light); border-radius:10px; padding:.8rem 1.1rem; font-size:1.02rem; line-height:1.35; color:var(--teal-dark);"><b style="display:block; margin-bottom:.2rem; font-family:'Fraunces',serif;">O que a 3V sabe</b>Internamente, a empresa está adquirindo um lead altamente qualificado.</div>
     </div>
-    <div class="form-note">A primeira versão do produto também previu uma faixa de até R$ 79,90. O ponto de partida recomendado é testar R$ 29,90 ou R$ 49,90 e deixar o tráfego indicar o melhor resultado.</div>
+    <div class="form-note" style="margin-top:.7rem;">A primeira versão também previu uma faixa de até R$ 79,90. O recomendado é testar R$ 29,90 ou R$ 49,90 e deixar o tráfego indicar o melhor resultado.</div>
   </section>
 
   <!-- 8 : gatilho automático -->
